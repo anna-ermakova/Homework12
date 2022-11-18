@@ -1,9 +1,18 @@
+import Transport.Car;
+
 import java.time.LocalDate;
+import java.util.Calendar;
+
+import static Transport.Car.changeCarWheelSeason;
 
 public class Main {
+
     public static Human[] human;
     public static Flower[] flowers;
+    public static Car[] car;
+
     public static void main(String[] args) {
+
 
         human = new Human[5];
         human[0] = new Human(1988, "Максим", "Минск", "");
@@ -15,12 +24,13 @@ public class Main {
 
         System.out.println();
         flowers = new Flower[5];
-        flowers[0]= new Flower("Роза обыкновеная", "", "Голландия", 35.59, 0 );
+        flowers[0] = new Flower("Роза обыкновеная", "", "Голландия", 35.59, 0);
         flowers[1] = new Flower("Хризантема", "", "", 15, 5);
         flowers[2] = new Flower("Пион", "", "Англия", 69.9, 1);
         flowers[3] = new Flower("Гипсофила", "", "Турция", 19.5, 10);
         printFlowers();
     }
+
     public static void printHumans() {
         for (int i = 0; i < human.length; i++) {
             if (human[i] != null) {
@@ -28,14 +38,39 @@ public class Main {
             }
         }
     }
-public static void printFlowers() {
-    for (int i = 0; i < flowers.length; i++) {
-        if (flowers[i] != null) {
-            System.out.println(flowers[i].toString());
+
+    public static void printFlowers() {
+        for (int i = 0; i < flowers.length; i++) {
+            if (flowers[i] != null) {
+                System.out.println(flowers[i].toString());
+            }
+        }
+        System.out.println();
+        car = new Car[5];
+
+        car[0] = new Car("Lada", "Granta", 1.7, "желтый", 2015, "Россия",
+                "механическая", "седан", "р123хх134", 5, "зимняя");
+        car[1] = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 2020, "Германия",
+                "автоматическая", "хэтчбек", "o480ув38", 5, "летняя");
+        car[2] = new Car("BMW", "Z8", 3.0, "черный", 2021, "Германия",
+                "автоматическая", "родстер", "н637пв161", 2, "летняя");
+        car[3] = new Car("Kia", "Sportage 4-го поколения", 2.4, "красный", 2018, "Южная Корея",
+                "автоматическая", "кроссовер", "а035мр761", 5, "зимняя");
+        car[4] = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея",
+                "автоматическая", "седан", "у001ук161", 5, "");
+
+        printCars();
+        changeCarWheelSeason();
+    }
+
+    public static void printCars() {
+        for (int i = 0; i < car.length; i++) {
+            if (car[i] != null) {
+                System.out.println(car[i].toString());
+            }
         }
     }
 
 
 
-    }
 }
