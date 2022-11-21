@@ -1,9 +1,9 @@
 import Transport.Car;
 
 import java.time.LocalDate;
-import java.util.Calendar;
 
 import static Transport.Car.changeCarWheelSeason;
+
 
 public class Main {
 
@@ -48,6 +48,7 @@ public class Main {
         System.out.println();
         car = new Car[5];
 
+
         car[0] = new Car("Lada", "Granta", 1.7, "желтый", 2015, "Россия",
                 "механическая", "седан", "р123хх134", 5, "зимняя");
         car[1] = new Car("Audi", "A8 50 L TDI quattro", 3.0, "черный", 2020, "Германия",
@@ -59,9 +60,18 @@ public class Main {
         car[4] = new Car("Hyundai", "Avante", 1.6, "оранжевый", 2016, "Южная Корея",
                 "автоматическая", "седан", "у001ук161", 5, "");
 
+
         printCars();
         changeCarWheelSeason();
+
+        Car mazda = new Car("mazda", "Z6", 1.3, "черный", 2000, "Россия", "автомат",
+                "авс", "", 5, "");
+        Car.Key mazdaKey = mazda.new Key("да", "да");
+        Car.Insurance mazdaInsurance = mazda.new Insurance(LocalDate.of(2023, 8, 23), 1000.5, "999999");
+        mazda.setKey(mazdaKey);
+        System.out.println(mazda);
     }
+
 
     public static void printCars() {
         for (int i = 0; i < car.length; i++) {
@@ -70,7 +80,6 @@ public class Main {
             }
         }
     }
-
 
 
 }

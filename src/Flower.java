@@ -57,7 +57,7 @@ public class Flower {
         if (cost <= 0) {
             this.cost = 1;
         } else {
-            this.cost = cost * Math.pow(cost, 2) / Math.pow(cost, 2);
+            this.cost = cost * Math.pow(cost, 2) / Math.pow(cost, 2);// для корректной печати цены с копейками
         }
         if (lifeSpan % 1 == 0 && lifeSpan > 0) { // зачем по заданию проверять, что целое? Если оно int
             this.lifeSpan = lifeSpan;
